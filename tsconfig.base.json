@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022"],
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+
+    "baseUrl": ".",
+    "paths": {
+      "@job-scanner/shared": ["packages/shared/src/index.ts"],
+      "@job-scanner/config": ["packages/config/src/index.ts"],
+      "@job-scanner/database": ["packages/database/src/index.ts"],
+      "@job-scanner/database/schema": ["packages/database/src/schema/index.ts"],
+      "@job-scanner/database/client": ["packages/database/src/client.ts"],
+      "@job-scanner/auth": ["packages/auth/src/index.ts"],
+      "@job-scanner/validation": ["packages/validation/src/index.ts"],
+      "@job-scanner/adapters": ["packages/adapters/src/index.ts"],
+      "@job-scanner/scoring": ["packages/scoring/src/index.ts"],
+      "@job-scanner/client-sdk": ["packages/client-sdk/src/index.ts"]
+    },
+
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "exactOptionalPropertyTypes": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "incremental": true,
+    "allowImportingTsExtensions": true,
+    "noEmit": true
+  }
+}

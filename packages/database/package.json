@@ -1,0 +1,49 @@
+{
+  "name": "@job-scanner/database",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./schema": {
+      "types": "./dist/schema/index.d.ts",
+      "default": "./dist/schema/index.js"
+    },
+    "./client": {
+      "types": "./dist/client.d.ts",
+      "default": "./dist/client.js"
+    }
+  },
+  "scripts": {
+  "build": "tsc -p tsconfig.json",
+  "generate": "drizzle-kit generate --config=drizzle.config.mjs",
+  "migrate": "drizzle-kit migrate --config=drizzle.config.mjs",
+  "push": "NODE_TLS_REJECT_UNAUTHORIZED=0 drizzle-kit push --config=drizzle.config.mjs",
+  "studio": "NODE_TLS_REJECT_UNAUTHORIZED=0 drizzle-kit studio --config=drizzle.config.mjs",
+  "test:connection": "tsx src/test-connection.ts",
+  "typecheck": "tsc --noEmit -p tsconfig.json",
+  "lint": "eslint src --ext .ts",
+  "clean": "rimraf dist"
+},
+  "dependencies": {
+    "@job-scanner/config": "workspace:*",
+    "@job-scanner/shared": "workspace:*",
+    "dotenv": "^17.2.2",
+    "drizzle-orm": "^0.32.2",
+    "pg": "^8.20.0",
+    "postgres": "^3.4.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "@types/pg": "^8.20.0",
+    "drizzle-kit": "^0.23.2",
+    "rimraf": "^6.0.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.5.4"
+  }
+}

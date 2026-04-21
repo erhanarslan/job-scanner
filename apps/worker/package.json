@@ -1,0 +1,28 @@
+{
+  "name": "@job-scanner/worker",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "lint": "eslint src --ext .ts",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "@job-scanner/adapters": "workspace:*",
+    "@job-scanner/config": "workspace:*",
+    "@job-scanner/database": "workspace:*",
+    "@job-scanner/scoring": "workspace:*",
+    "@job-scanner/shared": "workspace:*",
+    "@job-scanner/validation": "workspace:*",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "rimraf": "^6.0.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.5.4"
+  }
+}
